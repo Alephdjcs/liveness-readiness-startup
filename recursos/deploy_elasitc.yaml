@@ -1,14 +1,14 @@
-apiVersion: apps/v1 # i se Usa apps/v1beta2 para versiones anteriores a 1.9.0
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: elastic
   labels:
     tipo: "desarrollo"
 spec:
-  selector:   #permite seleccionar un conjunto de objetos que cumplan las condicione
+  selector:  
     matchLabels:
       app: elastic
-  replicas: 2 # indica al controlador que ejecute 2 pods
+  replicas: 2 #
   strategy:
      type: RollingUpdate
   minReadySeconds: 2
